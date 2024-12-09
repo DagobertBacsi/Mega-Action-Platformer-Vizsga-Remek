@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>images\megaicon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="images\bg.png" />
+    <None Remove="images\Icon.ico" />
+    <None Remove="images\LauncherBackground.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="images\megaicon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="images\bg.png" />
+    <Resource Include="images\Icon.ico" />
+  </ItemGroup>
+
+</Project>
