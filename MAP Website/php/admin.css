@@ -1,0 +1,242 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+}
+
+.admin-container {
+    width: 100%;
+    max-width: 800px;
+    padding: 2em;
+    background-color: #fff;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    text-align: center;
+    overflow: hidden;
+}
+
+h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 1em;
+}
+
+.table-wrapper {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-top: 1em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+th, td {
+    padding: 1em;
+    border: none;
+    font-size: 16px;
+}
+
+th {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+tr {
+    transition: all 0.3s ease;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+button {
+    padding: 0.6em 1.2em;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    outline: none;
+}
+
+
+.update-button, .delete-button {
+    padding: 0.5em 1em;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.update-button {
+    background-color: #4CAF50;
+    color: #fff;
+    margin-top: 8px;
+    padding: 0.5em 1em;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.update-button:hover {
+    background-color: #45a049;
+    box-shadow: 0 6px 14px rgba(0, 128, 0, 0.5);
+}
+
+.update-button:active {
+    background-color: #388e3c;
+    transform: translateY(1px);
+}
+
+.delete-button {
+    background-color: #f44336;
+    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3);
+}
+
+.delete-button:hover {
+    background-color: #e53935;
+    box-shadow: 0 6px 14px rgba(255, 0, 0, 0.5);
+}
+
+.delete-button:active {
+    background-color: #c62828;
+    transform: translateY(1px);
+}
+
+.logout-button {
+    padding: 0.75em 1.5em;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50px;
+    background-color: #FF5722;
+    color: #fff;
+    margin-top: 2em;
+    box-shadow: 0 4px 10px rgba(255, 87, 34, 0.3);
+    transition: all 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #e64a19;
+    box-shadow: 0 6px 14px rgba(255, 87, 34, 0.5);
+}
+
+.logout-button:active {
+    background-color: #d32f2f;
+    transform: translateY(1px);
+}
+
+/* Alert Message */
+
+.alert-message {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    font-weight: bold;
+    max-width: 300px;
+    z-index: 9999;
+    transform: translateX(100%);
+    animation: slideIn 0.5s forwards;
+}
+
+.alert-message.success {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.alert-message.error {
+    background-color: #f44336;
+    color: white;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+.alert-message.auto-hide {
+    animation: slideOut 0.5s forwards;
+}
+
+.alert-message-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.alert-message-close:hover {
+    color: #FFEB3B;
+}
+
+@media (max-width: 600px) {
+    .alert-message {
+        width: 90%;
+        font-size: 14px;
+        padding: 12px 20px;
+    }
+
+    table, th, td {
+        font-size: 14px;
+        padding: 0.5em;
+    }
+
+    .logout-button {
+        font-size: 14px;
+        padding: 0.5em 1em;
+    }
+}
