@@ -4,6 +4,13 @@
 
 Üdvözöllek a **Mega Action Platformer** projektben! 🎉 Ez a projekt egy teljes értékű weboldal, amely tartalmaz regisztrációs és bejelentkezési rendszert, adminisztrációs panelt, valamint egy játékindító (launcher) rendszert automatikus frissítésekkel. 🚀  
 
+## 🚀 Aktív Kollaborátorok
+| 👤 **Név**        | 🔗 **GitHub Profil** | 
+|-------------------|-----------------------|
+| 🧑‍💻 [Rómeó](https://github.com/KalmanRomeo) | [GitHub Profil](https://github.com/KalmanRomeo) |
+| 🧑‍💻 [Szabi](https://github.com/Szabi0147) | [GitHub Profil](https://github.com/Szabi0147) |
+| 🧑‍💻 [Milán](https://github.com/DagobertBacsi) | [GitHub Profil](https://github.com/DagobertBacsi) |
+
 ---
 
 ## 🛠 **Technológiák**  
