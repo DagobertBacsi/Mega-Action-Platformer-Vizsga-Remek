@@ -7,9 +7,9 @@
 ## 🚀 Aktív Kollaborátorok
 | 👤 **Név**        | 🔗 **GitHub Profil** | 
 |-------------------|-----------------------|
-| 🧑‍💻 [Rómeó](https://github.com/KalmanRomeo) | [GitHub Profil](https://github.com/KalmanRomeo) |
-| 🧑‍💻 [Szabi](https://github.com/Szabi0147) | [GitHub Profil](https://github.com/Szabi0147) |
-| 🧑‍💻 [Milán](https://github.com/DagobertBacsi) | [GitHub Profil](https://github.com/DagobertBacsi) |
+| 🧑‍💻 Rómeó | [GitHub Profil](https://github.com/KalmanRomeo) |
+| 🧑‍💻 Szabi | [GitHub Profil](https://github.com/Szabi0147) |
+| 🧑‍💻 Milán | [GitHub Profil](https://github.com/DagobertBacsi) |
 
 ---
 
