@@ -85,6 +85,13 @@ $result = $conn->query($sql);
             <form method="post" action="scoreboard.php">
                 <button type="submit" name="logout" class="logout-button">Kijelentkezés</button>
             </form>
+
+            <div class="settings-icon">
+                <a href="profile_change.php" title="Beállítások">
+                    ⚙️
+                </a>
+            </div>
+
     </div>
 
     <script>

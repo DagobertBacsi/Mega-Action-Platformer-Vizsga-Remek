@@ -23,8 +23,16 @@ if ($conn->connect_error) {
     die("Kapcsolat sikertelen: " . $conn->connect_error);
 }
 
+// Count total users and total coins
+$user_count_sql = "SELECT COUNT(*) AS total_users FROM users";
+$total_users = $conn->query($user_count_sql)->fetch_assoc()['total_users'];
+
+$coin_count_sql = "SELECT SUM(coin) AS total_coins FROM users";
+$total_coins = $conn->query($coin_count_sql)->fetch_assoc()['total_coins'] ?? 0;
+
 $alert_class = "success";
 
+// Coin update logic
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['coin'])) {
     $user_id = $_POST['user_id'];
     $new_coin_value = $_POST['coin'];
@@ -56,6 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['coin'])) {
     }
 }
 
+// User deletion logic
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_user'])) {
     $user_id = $_POST['user_id'];
 
@@ -89,7 +98,18 @@ $result = $conn->query($sql);
 </head>
 <body>
 <div class="admin-container">
-    <h2>Admin Panel - Coin Értékek Módosítása és Felhasználók Törlése</h2>
+    <h2>Admin Panel</h2>
+
+    <div class="dashboard-cards">
+        <div class="dashboard-card">
+            <h3>Regisztrált Felhasználók</h3>
+            <p><?php echo $total_users; ?></p>
+        </div>
+        <div class="dashboard-card">
+            <h3>Összes Érme</h3>
+            <p><?php echo $total_coins; ?></p>
+        </div>
+    </div>
 
     <?php if (isset($message)): ?>
         <div class="alert-message <?php echo $alert_class; ?>">

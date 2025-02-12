@@ -240,3 +240,39 @@ button {
         padding: 0.5em 1em;
     }
 }
+
+
+.dashboard-cards {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2em;
+    gap: 1em;
+}
+
+.dashboard-card {
+    background-color: #007bff;
+    color: white;
+    padding: 1.5em;
+    border-radius: 10px;
+    flex: 1;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.dashboard-card h3 {
+    font-size: 20px;
+    margin-bottom: 0.5em;
+}
+
+.dashboard-card p {
+    font-size: 24px;
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .dashboard-cards {
+        flex-direction: column;
+    }
+}

@@ -213,3 +213,20 @@ tr.bronze td {
     background-color: #cd7f32;
     color: white;
 }
+
+.settings-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+}
+
+.settings-icon a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.settings-icon a:hover {
+    color: #007bff;
+}
