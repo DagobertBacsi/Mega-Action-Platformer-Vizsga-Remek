@@ -1,0 +1,55 @@
+C:\Users\Vader\Downloads\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\bin\Debug\netcoreapp3.1\GameLauncher.exe
+C:\Users\Vader\Downloads\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\bin\Debug\netcoreapp3.1\GameLauncher.deps.json
+C:\Users\Vader\Downloads\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\bin\Debug\netcoreapp3.1\GameLauncher.runtimeconfig.json
+C:\Users\Vader\Downloads\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\bin\Debug\netcoreapp3.1\GameLauncher.runtimeconfig.dev.json
+C:\Users\Vader\Downloads\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\bin\Debug\netcoreapp3.1\GameLauncher.dll
+C:\Users\Vader\Downloads\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\bin\Debug\netcoreapp3.1\GameLauncher.pdb
+C:\Users\Vader\Downloads\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\Vader\Downloads\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\Vader\Downloads\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\obj\Debug\netcoreapp3.1\GameLauncher_MarkupCompile.cache
+C:\Users\Vader\Downloads\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\obj\Debug\netcoreapp3.1\GameLauncher_MarkupCompile.lref
+C:\Users\Vader\Downloads\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\Vader\Downloads\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\obj\Debug\netcoreapp3.1\GameLauncher.g.resources
+C:\Users\Vader\Downloads\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\obj\Debug\netcoreapp3.1\GameLauncher.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vader\Downloads\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\obj\Debug\netcoreapp3.1\GameLauncher.AssemblyInfoInputs.cache
+C:\Users\Vader\Downloads\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\obj\Debug\netcoreapp3.1\GameLauncher.AssemblyInfo.cs
+C:\Users\Vader\Downloads\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\obj\Debug\netcoreapp3.1\GameLauncher.csproj.CoreCompileInputs.cache
+C:\Users\Vader\Downloads\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\obj\Debug\netcoreapp3.1\GameLauncher.dll
+C:\Users\Vader\Downloads\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\obj\Debug\netcoreapp3.1\GameLauncher.pdb
+C:\Users\Vader\Downloads\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\obj\Debug\netcoreapp3.1\GameLauncher.genruntimeconfig.cache
+C:\Users\User\Downloads\MAP Projekt Old\Launcher Files\Autó Update Launcher\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\bin\Debug\netcoreapp3.1\GameLauncher.exe
+C:\Users\User\Downloads\MAP Projekt Old\Launcher Files\Autó Update Launcher\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\bin\Debug\netcoreapp3.1\GameLauncher.deps.json
+C:\Users\User\Downloads\MAP Projekt Old\Launcher Files\Autó Update Launcher\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\bin\Debug\netcoreapp3.1\GameLauncher.runtimeconfig.json
+C:\Users\User\Downloads\MAP Projekt Old\Launcher Files\Autó Update Launcher\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\bin\Debug\netcoreapp3.1\GameLauncher.runtimeconfig.dev.json
+C:\Users\User\Downloads\MAP Projekt Old\Launcher Files\Autó Update Launcher\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\bin\Debug\netcoreapp3.1\GameLauncher.dll
+C:\Users\User\Downloads\MAP Projekt Old\Launcher Files\Autó Update Launcher\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\bin\Debug\netcoreapp3.1\GameLauncher.pdb
+C:\Users\User\Downloads\MAP Projekt Old\Launcher Files\Autó Update Launcher\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\User\Downloads\MAP Projekt Old\Launcher Files\Autó Update Launcher\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\User\Downloads\MAP Projekt Old\Launcher Files\Autó Update Launcher\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\User\Downloads\MAP Projekt Old\Launcher Files\Autó Update Launcher\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\obj\Debug\netcoreapp3.1\GameLauncher_MarkupCompile.cache
+C:\Users\User\Downloads\MAP Projekt Old\Launcher Files\Autó Update Launcher\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\obj\Debug\netcoreapp3.1\GameLauncher.g.resources
+C:\Users\User\Downloads\MAP Projekt Old\Launcher Files\Autó Update Launcher\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\obj\Debug\netcoreapp3.1\GameLauncher.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Downloads\MAP Projekt Old\Launcher Files\Autó Update Launcher\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\obj\Debug\netcoreapp3.1\GameLauncher.AssemblyInfoInputs.cache
+C:\Users\User\Downloads\MAP Projekt Old\Launcher Files\Autó Update Launcher\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\obj\Debug\netcoreapp3.1\GameLauncher.AssemblyInfo.cs
+C:\Users\User\Downloads\MAP Projekt Old\Launcher Files\Autó Update Launcher\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\obj\Debug\netcoreapp3.1\GameLauncher.csproj.CoreCompileInputs.cache
+C:\Users\User\Downloads\MAP Projekt Old\Launcher Files\Autó Update Launcher\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\obj\Debug\netcoreapp3.1\GameLauncher.dll
+C:\Users\User\Downloads\MAP Projekt Old\Launcher Files\Autó Update Launcher\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\obj\Debug\netcoreapp3.1\GameLauncher.pdb
+C:\Users\User\Downloads\MAP Projekt Old\Launcher Files\Autó Update Launcher\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\obj\Debug\netcoreapp3.1\GameLauncher.genruntimeconfig.cache
+C:\Users\Vader\Downloads\MAP Projekt Old\MAP Projekt Old\Launcher Files\Autó Update Launcher\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\bin\Debug\netcoreapp3.1\GameLauncher.exe
+C:\Users\Vader\Downloads\MAP Projekt Old\MAP Projekt Old\Launcher Files\Autó Update Launcher\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\bin\Debug\netcoreapp3.1\GameLauncher.deps.json
+C:\Users\Vader\Downloads\MAP Projekt Old\MAP Projekt Old\Launcher Files\Autó Update Launcher\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\bin\Debug\netcoreapp3.1\GameLauncher.runtimeconfig.json
+C:\Users\Vader\Downloads\MAP Projekt Old\MAP Projekt Old\Launcher Files\Autó Update Launcher\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\bin\Debug\netcoreapp3.1\GameLauncher.runtimeconfig.dev.json
+C:\Users\Vader\Downloads\MAP Projekt Old\MAP Projekt Old\Launcher Files\Autó Update Launcher\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\bin\Debug\netcoreapp3.1\GameLauncher.dll
+C:\Users\Vader\Downloads\MAP Projekt Old\MAP Projekt Old\Launcher Files\Autó Update Launcher\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\bin\Debug\netcoreapp3.1\GameLauncher.pdb
+C:\Users\Vader\Downloads\MAP Projekt Old\MAP Projekt Old\Launcher Files\Autó Update Launcher\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\Vader\Downloads\MAP Projekt Old\MAP Projekt Old\Launcher Files\Autó Update Launcher\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\Vader\Downloads\MAP Projekt Old\MAP Projekt Old\Launcher Files\Autó Update Launcher\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\Vader\Downloads\MAP Projekt Old\MAP Projekt Old\Launcher Files\Autó Update Launcher\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\obj\Debug\netcoreapp3.1\GameLauncher_MarkupCompile.cache
+C:\Users\Vader\Downloads\MAP Projekt Old\MAP Projekt Old\Launcher Files\Autó Update Launcher\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\obj\Debug\netcoreapp3.1\GameLauncher.g.resources
+C:\Users\Vader\Downloads\MAP Projekt Old\MAP Projekt Old\Launcher Files\Autó Update Launcher\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\obj\Debug\netcoreapp3.1\GameLauncher.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vader\Downloads\MAP Projekt Old\MAP Projekt Old\Launcher Files\Autó Update Launcher\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\obj\Debug\netcoreapp3.1\GameLauncher.AssemblyInfoInputs.cache
+C:\Users\Vader\Downloads\MAP Projekt Old\MAP Projekt Old\Launcher Files\Autó Update Launcher\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\obj\Debug\netcoreapp3.1\GameLauncher.AssemblyInfo.cs
+C:\Users\Vader\Downloads\MAP Projekt Old\MAP Projekt Old\Launcher Files\Autó Update Launcher\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\obj\Debug\netcoreapp3.1\GameLauncher.csproj.CoreCompileInputs.cache
+C:\Users\Vader\Downloads\MAP Projekt Old\MAP Projekt Old\Launcher Files\Autó Update Launcher\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\obj\Debug\netcoreapp3.1\GameLauncher.dll
+C:\Users\Vader\Downloads\MAP Projekt Old\MAP Projekt Old\Launcher Files\Autó Update Launcher\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\obj\Debug\netcoreapp3.1\GameLauncher.pdb
+C:\Users\Vader\Downloads\MAP Projekt Old\MAP Projekt Old\Launcher Files\Autó Update Launcher\csharp-game-launcher-master\csharp-game-launcher-master\GameLauncher\obj\Debug\netcoreapp3.1\GameLauncher.genruntimeconfig.cache
