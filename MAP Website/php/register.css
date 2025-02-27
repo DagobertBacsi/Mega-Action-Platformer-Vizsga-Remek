@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css?family=Open%20Sans:800');
+
+:root {
+    --font: 2rem;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: linear-gradient(to top, #7763a7 0%, #863c71 100%);
+    backdrop-filter: blur(5px);
+}
+
+.register-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 2em;
+    background-color: black;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+}
+
+
+h2 {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 1em;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 1em;
+}
+
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.75em;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.register-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: var(--font);
+    color: white;
+    background-color: transparent;
+    padding: calc(var(--font) * 0.5);
+    border-radius: calc(var(--font) * 0.6);
+    box-shadow: inset 0 0 0 0 rgba(255, 255, 255, 0.5), inset 0 0 0 0 rgba(255, 255, 255, 0.3), 0 0 0 rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: all ease 0.2s;
+}
+  
+.register-button:hover {
+    box-shadow: inset 0 0 0 calc(var(--font) * 0.2) rgba(255, 255, 255, 0.5), inset 0 0 calc(var(--font) * 0.2) calc(var(--font) * 0.5) rgba(255, 255, 255, 0.3), 0 0 calc(var(--font) * 0.2) rgba(255, 255, 255, 0.2);
+}
+  
+.register-button::before {
+    content: '';
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    border-radius: calc(var(--font) * 0.8);
+    background-color: transparent;
+    box-shadow: inset 0 0 calc(var(--font) * 0.2) calc(var(--font) * 0.2) rgba(255, 255, 255, 0.3);
+    filter: blur(calc(var(--font) * 0.06));
+    transition: opacity 0.2s;
+    opacity: 0;
+}
+  
+.register-button:hover::before {
+    opacity: 0.5;
+    border: solid rgba(255, 255, 255, 0.8);
+    animation: borders infinite 2s linear;
+}
+  
+.register-button > span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 0, 0.5);
+    border-radius: calc(var(--font) * 0.6);
+    z-index: -1;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+  
+.register-button:hover > span {
+    transform: scale(1.1);
+}
+  
+@keyframes borders {
+    0%, 100% { border-width: calc(var(--font) * 0.2) calc(var(--font) * 0.1) calc(var(--font) * 0.02) calc(var(--font) * 0.02); }
+    25% { border-width: calc(var(--font) * 0.1) calc(var(--font) * 0.02) calc(var(--font) * 0.02) calc(var(--font) * 0.2); }
+    50% { border-width: calc(var(--font) * 0.02) calc(var(--font) * 0.02) calc(var(--font) * 0.2) calc(var(--font) * 0.1); }
+    75% { border-width: calc(var(--font) * 0.02) calc(var(--font) * 0.2) calc(var(--font) * 0.1) calc(var(--font) * 0.02); }
+}
+
+.error {
+    color: red;
+    margin-bottom: 1em;
+}
+
+/* Preloader */
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-100px); /* Ugrás magassága */
+    }
+}
+
+@keyframes squash {
+    0%, 100% {
+        transform: scaleX(1);
+    }
+    50% {
+        transform: scaleX(1.2); /* Lapulás az ugráskor */
+    }
+}
+
+@keyframes shadow {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: scale(1.5); /* Árnyék szélesedése ugráskor */
+        opacity: 0.1;
+    }
+}
+
+.back-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Press Start 2P', sans-serif;
+    text-transform: uppercase;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #ff0033;
+}
+
+.back-button:focus {
+    outline: none;
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.8);
+}
+
+/* Preloader */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ffcc00, #ff0033, #00ccff);
+    background-size: 600% 600%;
+    animation: gradient 5s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 9999;
+}
+
+.title {
+    font-size: 30px;
+    color: #fff;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    animation: blink 1s steps(2) infinite;
+}
+
+.cube {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    background-color: #ffcc00;
+    animation: spin 1.5s infinite linear;
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    width: 80%;
+    height: 10px;
+    background-color: #444;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.progress {
+    height: 100%;
+    width: 0%;
+    background-color: #ffcc00;
+    border-radius: 5px;
+    animation: progress-animation 3s linear forwards;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes progress-animation {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
