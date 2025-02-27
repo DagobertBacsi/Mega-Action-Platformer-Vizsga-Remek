@@ -135,7 +135,8 @@ CREATE TABLE IF NOT EXISTS users (
 
 ### 🌟 **Felhasználói modulok**  
 - **Regisztráció**: Gyors és biztonságos.  
-- **Bejelentkezés**: Gyors és biztonságos bejelentkezés.  
+- **Bejelentkezés**: Gyors és biztonságos bejelentkezés.
+- **Licensz Vásárlás**: Gyors és biztonságos vásárlás rendszer PayPal Api Használatával
 
 ### 🔒 **Admin Panel**  
 - **Felhasználókezelés**: Felhasználók listázása, törlése, érmék módosítása.    
