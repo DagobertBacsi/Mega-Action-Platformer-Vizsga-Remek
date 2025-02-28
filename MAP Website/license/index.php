@@ -4,16 +4,17 @@ require_once 'config.php';
 ?>
 
 <script src="https://www.paypal.com/sdk/js?client-id=<?php echo PAYPAL_SANDBOX?PAYPAL_SANDBOX_CLIENT_ID:PAYPAL_PROD_CLIENT_ID; ?>&currency=<?php echo $currency; ?>"></script>
+<link rel="stylesheet" href="paypal.css">
 
 <div class="panel">
     <div class="overlay hidden"><div class="overlay-content"><img src="css/loading.gif" alt="Processing..."/></div></div>
 
     <div class="panel-heading">
-        <h3 class="panel-title">Charge <?php echo '$'.$itemPrice; ?> with PayPal</h3>
+        <h3 class="panel-title"><?php echo '$'.$itemPrice; ?> Fizetése PayPal Használatával</h3>
         
         <!-- Product Info -->
-        <p><b>Item Name:</b> <?php echo $itemName; ?></p>
-        <p><b>Price:</b> <?php echo '$'.$itemPrice.' '.$currency; ?></p>
+        <p><b>Termék Neve:</b> <?php echo $itemName; ?></p>
+        <p><b>Ár:</b> <?php echo '$'.$itemPrice.' '.$currency; ?></p>
     </div>
     <div class="panel-body">
         <!-- Display status message -->

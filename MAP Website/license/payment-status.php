@@ -35,10 +35,21 @@ if(!empty($_GET['checkout_ref_id'])){
 } 
 ?>
 
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PFizetési Státusz</title>
+    <link rel="stylesheet" href="payment-status.css">
+</head>
+<body>
+
+
 <?php if(!empty($payment_ref_id)){ ?>
     <h1 class="<?php echo $status; ?>"><?php echo $statusMsg; ?></h1>
     
-    <h4>Payment Information</h4>
+    <h4>Fizetési Információ</h4>
     <p><b>Reference Number:</b> <?php echo $payment_ref_id; ?></p>
     <p><b>Order ID:</b> <?php echo $order_id; ?></p>
     <p><b>Transaction ID:</b> <?php echo $transaction_id; ?></p>
