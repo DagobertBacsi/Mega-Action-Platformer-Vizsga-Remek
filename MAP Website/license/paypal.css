@@ -52,15 +52,28 @@ p {
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+    z-index: 9999;
 }
 
 .overlay.hidden {
     display: none;
 }
 
-.overlay-content img {
-    width: 50px;
+.overlay-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
 }
+
+.overlay-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Kitölti a területet anélkül, hogy torzulna */
+}
+
 
 /* Fizetési üzenet */
 #paymentResponse {
@@ -76,5 +89,142 @@ p {
     display: none;
 }
 
+/* RGB háttér */
+.rgb-bg {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(270deg, #ff0000, #00ff00, #0000ff);
+    background-size: 600% 600%;
+    animation: rgbAnimation 10s infinite alternate;
+}
 
+/* RGB animáció */
+@keyframes rgbAnimation {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+.terms-container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    width: 90%;
+    max-width: 600px;
+}
+
+#acceptButton {
+    width: 200px;
+    padding: 12px 20px;
+    background: yellow;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.checkbox-container:has(input:checked) ~ #acceptButton {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.terms-text {
+    width: 100%;
+    height: 350px;
+    padding: 10px;
+    background: #222;
+    color: #0f0;
+    border: 1px solid #0f0;
+    max-height: 350px;
+}
+
+
+
+
+/* Gomb hover effekt */
+#acceptButton:hover {
+    animation: pulse 1s infinite alternate;
+}
+
+/* Pulzáló animáció */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); }
+}
+
+.hidden {
+    display: none;
+}
+
+/* Checkbox konténer */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+    user-select: none;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: relative;
+    height: 25px;
+    width: 25px;
+    background-color: transparent;
+    border: 2px solid yellow;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.checkbox-container input:checked + .checkmark {
+    background-color: yellow;
+    transform: scale(1.1);
+}
+
+.checkmark::after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 8px;
+    top: 2px;
+    width: 6px;
+    height: 12px;
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+.checkbox-container input:checked + .checkmark::after {
+    display: block;
+    animation: checkmarkBounce 0.3s ease-in-out forwards;
+}
+
+@keyframes checkmarkBounce {
+    0% { transform: scale(0) rotate(45deg); }
+    80% { transform: scale(1.2) rotate(45deg); }
+    100% { transform: scale(1) rotate(45deg); }
+}
 
