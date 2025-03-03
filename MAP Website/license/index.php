@@ -8,41 +8,41 @@ require_once 'config.php';
 <div class="rgb-bg">
 <div class="terms-container">
     <h3>💡 Általános Szerződési Feltételek (ÁSZF) 💡</h3>
-    <textarea readonly class="terms-text">
-        📝 **Hatályos: 2024. március 2.**  
+    <textarea readonly class="terms-text" style="resize: none;">
+        📝 Hatályos: 2024. március 2. 
 
         Kérjük, figyelmesen olvassa el az alábbi szerződési feltételeket,  
         mielőtt PayPal-on keresztül fizetést hajt végre.  
 
-        A **PayPal gombra kattintással** és a tranzakció elindításával  
+        A PayPal gombra kattintással és a tranzakció elindításával  
         Ön elfogadja a jelen ÁSZF-et.  
 
         -------------------------------------------------------  
 
-        1️⃣ **Fizetési folyamat**  
-        A fizetés a **PayPal biztonságos rendszerén** keresztül történik.  
-        A Vásárló **e-mailben kap visszaigazolást**.  
+        1️⃣ Fizetési folyamat
+        A fizetés a PayPal biztonságos rendszerén keresztül történik.  
+        A Vásárló e-mailben kap visszaigazolást.  
 
-        2️⃣ **Termékek és árak**  
-        - A feltüntetett árak **tartalmazzák az adókat** (ha van).  
-        - Az árak **véglegesek**.  
+        2️⃣ Termékek és árak
+        - A feltüntetett árak tartalmazzák az adókat (ha van).  
+        - Az árak véglegesek.  
 
-        3️⃣ **Szállítás és teljesítés**  
-        - 📥 **Digitális termékek**: azonnal elérhetővé válnak.  
-        - 📦 **Fizikai termékek**: a szállítás a megrendeléstől függ.  
+        3️⃣ Szállítás és teljesítés
+        - 📥 Digitális termékek: azonnal elérhetővé válnak.  
+        - 📦 Fizikai termékek: a szállítás a megrendeléstől függ.  
 
-        4️⃣ **Elállási jog**  
-        - ❌ **Digitális termékek**: nincs visszatérítés.  
-        - ✅ **Fizikai termékek**: 14 napon belül élhet az elállási jogával.  
+        4️⃣ Elállási jog
+        - ❌ Digitális termékek: nincs visszatérítés.  
+        - ✅ Fizikai termékek: 14 napon belül élhet az elállási jogával.  
 
-        5️⃣ **Adatkezelés és biztonság**  
-        A Vásárló adatait az **Adatvédelmi Szabályzat** szerint kezeljük.  
+        5️⃣ Adatkezelés és biztonság  
+        A Vásárló adatait az Adatvédelmi Szabályzat szerint kezeljük.  
 
         -------------------------------------------------------  
 
-        🔹 **Ügyfélszolgálat**  
-        📧 **E-mail**: chetan@mapdevelopment.hu  
-        📞 **Telefon**: 06702587769  
+        🔹 Ügyfélszolgálat
+        📧 E-mail: chetan@mapdevelopment.hu  
+        📞 Telefon: 06702587769  
     </textarea>
     
     <label class="checkbox-container">

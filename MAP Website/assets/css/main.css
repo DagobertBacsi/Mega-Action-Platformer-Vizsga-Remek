@@ -1589,8 +1589,8 @@ body.is-preload #bg:before {
 			position: relative;
 			width: 40rem;
 			max-width: 100%;
-			background-color: rgba(27, 31, 34, 0.85);
-			border-radius: 4px;
+			background-color: rgba(42, 49, 61, 0.85);
+			border-radius: 12px;
 			opacity: 0;
 		}
 
