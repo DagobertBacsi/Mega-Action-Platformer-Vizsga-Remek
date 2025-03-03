@@ -59,6 +59,7 @@ input[type="password"] {
 
 .register-button {
     display: flex;
+    margin: auto;
     justify-content: center;
     align-items: center;
     position: relative;
