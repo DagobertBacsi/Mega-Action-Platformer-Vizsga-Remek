@@ -30,20 +30,23 @@ namespace MAP_Launcher
             Application.Current.Shutdown();
         }
 
-        // Licensz ellenőrző gomb eseménye
         private void BtnValidate_Click(object sender, RoutedEventArgs e)
         {
             string licenseKey = LicenseKeyTextBox.Text.Trim();
 
-            if (IsValidLicense(licenseKey))
+            int licenseStatus = GetLicenseStatus(licenseKey);
+
+            if (licenseStatus == 1)
+            {
+                MessageBox.Show("Ez a licensz ki van tiltva!", "Hozzáférés megtagadva", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            else if (licenseStatus == 0)
             {
                 MessageBox.Show("Licensz érvényes! Továbbítás a főablakhoz...", "Siker", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                // MainWindow megnyitása
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
 
-                // Jelenlegi ablak bezárása
                 this.Close();
             }
             else
@@ -52,10 +55,9 @@ namespace MAP_Launcher
             }
         }
 
-        // Licenszkulcs ellenőrzése az adatbázisban
-        private bool IsValidLicense(string licenseKey)
+        private int GetLicenseStatus(string licenseKey)
         {
-            string query = "SELECT COUNT(*) FROM Licensz WHERE license_key = @licenseKey";
+            string query = "SELECT banned FROM Licensz WHERE license_key = @licenseKey";
 
             try
             {
@@ -65,16 +67,20 @@ namespace MAP_Launcher
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@licenseKey", licenseKey);
-                        int count = Convert.ToInt32(cmd.ExecuteScalar());
-                        return count > 0; // Ha van találat, akkor érvényes a kulcs
+                        object result = cmd.ExecuteScalar();
+
+                        if (result != null)
+                        {
+                            return Convert.ToInt32(result);
+                        }
                     }
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Hiba történt az adatbázis elérésekor: " + ex.Message, "Hiba", MessageBoxButton.OK, MessageBoxImage.Error);
-                return false;
             }
+            return -1;
         }
     }
 }
