@@ -119,6 +119,60 @@ CREATE TABLE IF NOT EXISTS users (
     coin INT DEFAULT 0,                     -- Felhasználóhoz tartozó "coin", alapértelmezetten 0
     email VARCHAR(100) UNIQUE NOT NULL      -- E-mail cím, maximum 100 karakter, egyedi érték
 );
+
+CREATE TABLE transactions (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  item_number varchar(50) DEFAULT NULL,
+  item_name varchar(255) DEFAULT NULL,
+  item_price float(10,2) DEFAULT NULL,
+  item_price_currency varchar(10) DEFAULT NULL,
+  payer_id varchar(50) DEFAULT NULL,
+  payer_name varchar(50) DEFAULT NULL,
+  payer_email varchar(50) DEFAULT NULL,
+  payer_country varchar(20) DEFAULT NULL,
+  merchant_id varchar(255) DEFAULT NULL,
+  merchant_email varchar(50) DEFAULT NULL,
+  order_id varchar(50) NOT NULL,
+  transaction_id varchar(50) NOT NULL,
+  paid_amount float(10,2) NOT NULL,
+  paid_amount_currency varchar(10) NOT NULL,
+  payment_source varchar(50) DEFAULT NULL,
+  payment_status varchar(25) NOT NULL,
+  created datetime NOT NULL,
+  modified datetime NOT NULL,
+  PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;CREATE TABLE transactions (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  item_number varchar(50) DEFAULT NULL,
+  item_name varchar(255) DEFAULT NULL,
+  item_price float(10,2) DEFAULT NULL,
+  item_price_currency varchar(10) DEFAULT NULL,
+  payer_id varchar(50) DEFAULT NULL,
+  payer_name varchar(50) DEFAULT NULL,
+  payer_email varchar(50) DEFAULT NULL,
+  payer_country varchar(20) DEFAULT NULL,
+  merchant_id varchar(255) DEFAULT NULL,
+  merchant_email varchar(50) DEFAULT NULL,
+  order_id varchar(50) NOT NULL,
+  transaction_id varchar(50) NOT NULL,
+  paid_amount float(10,2) NOT NULL,
+  paid_amount_currency varchar(10) NOT NULL,
+  payment_source varchar(50) DEFAULT NULL,
+  payment_status varchar(25) NOT NULL,
+  created datetime NOT NULL,
+  modified datetime NOT NULL,
+  PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE licenses (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    license_key VARCHAR(25) UNIQUE NOT NULL,
+    user_id INT NULL,
+    is_admin BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
 ```
 
 ---
