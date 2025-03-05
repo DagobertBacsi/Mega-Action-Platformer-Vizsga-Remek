@@ -1205,13 +1205,13 @@ body.is-preload #bg:before {
 /* Player */
 
 #sprite {
-    width: 75px;  
-    height: 75px; 
+    width: 80%;  
+    height: 80%; 
     background-size: contain; 
     background-repeat: no-repeat;
     background-position: center;
 	image-rendering: pixelated;
-	margin: 5px;
+	margin: 10px;
 }
 
 @media (max-width: 600px) {
