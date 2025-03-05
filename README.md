@@ -143,14 +143,14 @@ CREATE TABLE transactions (
   PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;CREATE TABLE transactions (
 
-CREATE TABLE Licensz (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    license_key VARCHAR(25) UNIQUE NOT NULL,
-    user_id INT NULL,
-    is_admin BOOLEAN DEFAULT FALSE,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id)
-);
+CREATE TABLE licensz (
+  id int(11) NOT NULL,
+  payer_id varchar(50) NOT NULL,
+  order_id varchar(50) NOT NULL,
+  license_key varchar(24) NOT NULL,
+  created_at timestamp NOT NULL DEFAULT current_timestamp(),
+   banned BOOLEAN DEFAULT 0 
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 ```
 
