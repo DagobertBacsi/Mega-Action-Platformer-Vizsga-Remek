@@ -143,7 +143,7 @@ CREATE TABLE transactions (
   PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;CREATE TABLE transactions (
 
-CREATE TABLE licenses (
+CREATE TABLE Licensz (
     id INT PRIMARY KEY AUTO_INCREMENT,
     license_key VARCHAR(25) UNIQUE NOT NULL,
     user_id INT NULL,
