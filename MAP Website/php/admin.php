@@ -23,7 +23,6 @@ if ($conn->connect_error) {
     die("Kapcsolat sikertelen: " . $conn->connect_error);
 }
 
-// Count total users and total coins
 $user_count_sql = "SELECT COUNT(*) AS total_users FROM users";
 $total_users = $conn->query($user_count_sql)->fetch_assoc()['total_users'];
 
@@ -32,39 +31,23 @@ $total_coins = $conn->query($coin_count_sql)->fetch_assoc()['total_coins'] ?? 0;
 
 $alert_class = "success";
 
-// Coin update logic
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['coin'])) {
     $user_id = $_POST['user_id'];
     $new_coin_value = $_POST['coin'];
 
-    $check_sql = "SELECT coin FROM users WHERE id = ?";
-    $stmt = $conn->prepare($check_sql);
-    $stmt->bind_param("i", $user_id);
-    $stmt->execute();
-    $stmt->bind_result($current_coin_value);
-    $stmt->fetch();
-    $stmt->close();
+    $update_sql = "UPDATE users SET coin = ? WHERE id = ?";
+    $stmt = $conn->prepare($update_sql);
+    $stmt->bind_param("ii", $new_coin_value, $user_id);
 
-    if ($current_coin_value != $new_coin_value) {
-        $update_sql = "UPDATE users SET coin = ? WHERE id = ?";
-        $stmt = $conn->prepare($update_sql);
-        $stmt->bind_param("ii", $new_coin_value, $user_id);
-
-        if ($stmt->execute()) {
-            $message = "Érmék száma sikeresen frissítve!";
-        } else {
-            $message = "Hiba történt a frissítés során.";
-            $alert_class = "error";
-        }
-
-        $stmt->close();
+    if ($stmt->execute()) {
+        $message = "Érmék száma sikeresen frissítve!";
     } else {
-        $message = "Az új érmék száma nem lehet ugyan az!";
+        $message = "Hiba történt a frissítés során.";
         $alert_class = "error";
     }
+    $stmt->close();
 }
 
-// User deletion logic
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_user'])) {
     $user_id = $_POST['user_id'];
 
@@ -78,12 +61,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_user'])) {
         $message = "Hiba történt a törlés során.";
         $alert_class = "error";
     }
+    $stmt->close();
+}
 
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['ban_license'])) {
+    $license_id = $_POST['license_id'];
+
+    $ban_sql = "UPDATE Licensz SET banned = 1 WHERE id = ?";
+    $stmt = $conn->prepare($ban_sql);
+    $stmt->bind_param("i", $license_id);
+
+    if ($stmt->execute()) {
+        $message = "Licenszkulcs sikeresen bannolva!";
+    } else {
+        $message = "Hiba történt a bannolás során.";
+        $alert_class = "error";
+    }
+    $stmt->close();
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['unban_license'])) {
+    $license_id = $_POST['license_id'];
+
+    $unban_sql = "UPDATE Licensz SET banned = 0 WHERE id = ?";
+    $stmt = $conn->prepare($unban_sql);
+    $stmt->bind_param("i", $license_id);
+
+    if ($stmt->execute()) {
+        $message = "Licenszkulcs sikeresen feloldva!";
+    } else {
+        $message = "Hiba történt a feloldás során.";
+        $alert_class = "error";
+    }
     $stmt->close();
 }
 
 $sql = "SELECT id, username, coin FROM users";
 $result = $conn->query($sql);
+
+$license_sql = "SELECT id, license_key, banned FROM Licensz";
+$license_result = $conn->query($license_sql);
 ?>
 
 <!DOCTYPE html>
@@ -93,8 +110,6 @@ $result = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MAP - Admin Panel</title>
     <link rel="stylesheet" href="admin.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="../images/Mega action.ico" type="image/x-icon">
 </head>
 <body>
 <div class="admin-container">
@@ -114,10 +129,10 @@ $result = $conn->query($sql);
     <?php if (isset($message)): ?>
         <div class="alert-message <?php echo $alert_class; ?>">
             <?php echo $message; ?>
-            <span class="alert-message-close" onclick="closeAlert()">×</span>
         </div>
     <?php endif; ?>
 
+    <h3>Felhasználók kezelése</h3>
     <div class="table-wrapper">
         <table>
             <tr>
@@ -126,63 +141,64 @@ $result = $conn->query($sql);
                 <th>Művelet</th>
                 <th>Törlés</th>
             </tr>
-            <?php
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    echo "<tr>";
-                    echo "<td>" . htmlspecialchars($row['username']) . "</td>";
-                    echo "<td>" . htmlspecialchars($row['coin']) . "</td>";
-                    echo "<td>
-                            <form method='post' action='admin.php'>
-                                <input type='hidden' name='user_id' value='" . $row['id'] . "'>
-                                <input type='number' name='coin' value='" . $row['coin'] . "' required>
-                                <button type='submit' class='update-button'>Frissítés</button>
-                            </form>
-                          </td>";
-                    echo "<td>
-                            <form method='post' action='admin.php'>
-                                <input type='hidden' name='user_id' value='" . $row['id'] . "'>
-                                <button type='submit' name='delete_user' class='delete-button'>Felhasználó Törlése</button>
-                            </form>
-                          </td>";
-                    echo "</tr>";
-                }
-            } else {
-                echo "<tr><td colspan='4'>Nincs elérhető adat</td></tr>";
-            }
-            ?>
+            <?php while ($row = $result->fetch_assoc()): ?>
+                <tr>
+                    <td><?php echo htmlspecialchars($row['username']); ?></td>
+                    <td><?php echo htmlspecialchars($row['coin']); ?></td>
+                    <td>
+                        <form method="post">
+                            <input type="hidden" name="user_id" value="<?php echo $row['id']; ?>">
+                            <input type="number" name="coin" value="<?php echo $row['coin']; ?>" required>
+                            <button type="submit">Frissítés</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form method="post">
+                            <input type="hidden" name="user_id" value="<?php echo $row['id']; ?>">
+                            <button type="submit" name="delete_user">Törlés</button>
+                        </form>
+                    </td>
+                </tr>
+            <?php endwhile; ?>
         </table>
     </div>
 
-    <form method="post" action="admin.php">
-        <button type="submit" name="logout" class="logout-button">Kijelentkezés</button>
-    </form>
+    <h3>Licenszkulcsok kezelése</h3>
+    <div class="table-wrapper">
+        <table>
+            <tr>
+                <th>Licenszkulcs</th>
+                <th>Bannolva</th>
+                <th>Bannolás/Feloldás</th>
+            </tr>
+            <?php while ($row = $license_result->fetch_assoc()): ?>
+                <tr>
+                    <td><?php echo htmlspecialchars($row['license_key']); ?></td>
+                    <td><?php echo $row['banned'] ? '❌ Igen' : '✅ Nem'; ?></td>
+                    <td>
+                        <?php if (!$row['banned']): ?>
+                            <form method="post">
+                                <input type="hidden" name="license_id" value="<?php echo $row['id']; ?>">
+                                <button type="submit" name="ban_license" class="delete-button">Bannolás</button>
+                            </form>
+                        <?php else: ?>
+                            <form method="post">
+                                <input type="hidden" name="license_id" value="<?php echo $row['id']; ?>">
+                                <button type="submit" name="unban_license" class="update-button">Feloldás</button>
+                            </form>
+                        <?php endif; ?>
+                    </td>
+                </tr>
+            <?php endwhile; ?>
+        </table>
+    </div>
+
+    <div class="logout-container">
+        <form method="post">
+            <button type="submit" name="logout" class="logout-button">Kijelentkezés</button>
+        </form>
+    </div>
 </div>
-
-<script>
-    window.addEventListener('DOMContentLoaded', function () {
-        const alertMessage = document.querySelector('.alert-message');
-        if (alertMessage) {
-            setTimeout(function () {
-                alertMessage.classList.add('auto-hide');
-                alertMessage.addEventListener('animationend', function () {
-                    alertMessage.remove();
-                });
-            }, 8000);
-        }
-    });
-
-    function closeAlert() {
-        const alertMessage = document.querySelector('.alert-message');
-        if (alertMessage) {
-            alertMessage.classList.add('auto-hide');
-            alertMessage.addEventListener('animationend', function () {
-                alertMessage.remove();
-            });
-        }
-    }
-</script>
-
 </body>
 </html>
 
