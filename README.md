@@ -144,7 +144,7 @@ CREATE TABLE transactions (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;CREATE TABLE transactions (
 
 CREATE TABLE licensz (
-  id int(11) NOT NULL,
+  id int(11) AUTO_INCREMENT NOT NULL,
   payer_id varchar(50) NOT NULL,
   order_id varchar(50) NOT NULL,
   license_key varchar(24) NOT NULL,
