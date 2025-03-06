@@ -1,35 +1,32 @@
 <?php 
-// Include the configuration file  
 require_once 'config.php'; 
- 
-// Include the database connection file  
 require_once 'dbConnect.php'; 
  
 $payment_ref_id = $statusMsg = ''; 
 $status = 'error'; 
 $license_key = ''; 
  
-// Check whether the payment ID is not empty 
-if(!empty($_GET['checkout_ref_id'])){ 
+if(!empty($_GET['checkout_ref_id'])) { 
     $payment_txn_id  = base64_decode($_GET['checkout_ref_id']); 
      
-    // Fetch transaction data from the database 
-    $sqlQ = "SELECT id,payer_id,payer_name,payer_email,payer_country,order_id,transaction_id,paid_amount,paid_amount_currency,payment_source,payment_status,created FROM transactions WHERE transaction_id = ?"; 
+    $sqlQ = "SELECT id, payer_id, payer_name, payer_email, payer_country, order_id, transaction_id, 
+                    paid_amount, paid_amount_currency, payment_source, payment_status, created 
+             FROM transactions WHERE transaction_id = ?"; 
     $stmt = $db->prepare($sqlQ);  
     $stmt->bind_param("s", $payment_txn_id); 
     $stmt->execute(); 
     $stmt->store_result(); 
  
-    if($stmt->num_rows > 0){ 
-        // Get transaction details 
-        $stmt->bind_result($payment_ref_id, $payer_id, $payer_name, $payer_email, $payer_country, $order_id, $transaction_id, $paid_amount, $paid_amount_currency, $payment_source, $payment_status, $created); 
+    if($stmt->num_rows > 0) { 
+        $stmt->bind_result($payment_ref_id, $payer_id, $payer_name, $payer_email, $payer_country, 
+                           $order_id, $transaction_id, $paid_amount, $paid_amount_currency, 
+                           $payment_source, $payment_status, $created); 
         $stmt->fetch(); 
         
         if ($payment_status === 'COMPLETED') { 
             $status = 'success'; 
             $statusMsg = 'A fizetés sikeres volt!'; 
             
-            // Check if a license key already exists for this order 
             $checkQuery = "SELECT license_key FROM Licensz WHERE order_id = ?";
             $checkStmt = $db->prepare($checkQuery);
             $checkStmt->bind_param("s", $order_id);
@@ -40,14 +37,12 @@ if(!empty($_GET['checkout_ref_id'])){
                 $checkStmt->bind_result($license_key);
                 $checkStmt->fetch();
             } else {
-                // Generate a 24-character license key 
                 function generateLicenseKey($length = 24) { 
                     return substr(str_shuffle('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'), 0, $length); 
                 } 
                 
                 $license_key = generateLicenseKey(); 
                 
-                // Insert the license key into the database 
                 $insertQuery = "INSERT INTO Licensz (payer_id, order_id, license_key, created_at) VALUES (?, ?, ?, NOW())"; 
                 $insertStmt = $db->prepare($insertQuery); 
                 $insertStmt->bind_param("sss", $payer_id, $order_id, $license_key); 
@@ -73,7 +68,7 @@ if(!empty($_GET['checkout_ref_id'])){
     <title>Fizetési Státusz</title>
     <link rel="stylesheet" href="payment-status.css">
     <style>
-        .copy-btn {
+        .copy-btn, .save-btn {
             background-color: #0070ba;
             color: white;
             border: none;
@@ -82,8 +77,10 @@ if(!empty($_GET['checkout_ref_id'])){
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            display: inline-block;
+            margin-top: 10px;
         }
-        .copy-btn:hover {
+        .copy-btn:hover, .save-btn:hover {
             background-color: #005f9e;
         }
     </style>
@@ -111,6 +108,7 @@ if(!empty($_GET['checkout_ref_id'])){
         <h4>Licensz Kulcs</h4>
         <p id="licenseKey"><b><?php echo $license_key; ?></b></p>
         <button class="copy-btn" onclick="copyLicenseKey()">Másolás</button>
+        <p style="color: red; font-weight: bold;">Mindenképp mentsd el a licensz kulcsot!</p>
         <script>
             function copyLicenseKey() {
                 var copyText = document.getElementById("licenseKey").innerText;
@@ -120,9 +118,16 @@ if(!empty($_GET['checkout_ref_id'])){
             }
         </script>
     <?php } ?>
-<?php }else{ ?>
+
+    <form action="generate-docx.php" method="GET">
+        <input type="hidden" name="order_id" value="<?php echo $order_id; ?>">
+        <button type="submit" class="save-btn">Mentés DOCX-ként</button>
+    </form>
+
+<?php } else { ?>
     <h1 class="error">A fizetés sikertelen!</h1>
     <p class="error"><?php echo $statusMsg; ?></p>
 <?php } ?>
+
 </body>
 </html>
