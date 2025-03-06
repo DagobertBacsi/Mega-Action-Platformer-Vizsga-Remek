@@ -124,6 +124,18 @@ if(!empty($_GET['checkout_ref_id'])) {
         <button type="submit" class="save-btn">Mentés DOCX-ként</button>
     </form>
 
+    <button class="save-btn back-btn">Vissza a főoldalra</button>
+
+    <script>
+        document.querySelector(".back-btn").addEventListener("click", function(event) {
+        event.preventDefault();
+        const confirmed = confirm("Biztosan vissza szeretne lépni a főoldalra? Elmentette a licensz kulcsot?");
+        if (confirmed) {
+        window.location.href = "../index.html";
+        }
+    });
+    </script>
+
 <?php } else { ?>
     <h1 class="error">A fizetés sikertelen!</h1>
     <p class="error"><?php echo $statusMsg; ?></p>
