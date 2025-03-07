@@ -120,7 +120,7 @@ CREATE TABLE IF NOT EXISTS users (
     email VARCHAR(100) UNIQUE NOT NULL      -- E-mail cím, maximum 100 karakter, egyedi érték
 );
 
-CREATE TABLE transactions (
+CREATE TABLE IF NOT EXISTS transactions (
   id int(11) NOT NULL AUTO_INCREMENT,
   item_number varchar(50) DEFAULT NULL,
   item_name varchar(255) DEFAULT NULL,
@@ -143,8 +143,8 @@ CREATE TABLE transactions (
   PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;CREATE TABLE transactions (
 
-CREATE TABLE licensz (
-  id int(11) AUTO_INCREMENT NOT NULL,
+CREATE TABLE IF NOT EXISTS licensz (
+  id int(11) AUTO_INCREMENT NOT NULL PRIMARY KEY,
   payer_id varchar(50) NOT NULL,
   order_id varchar(50) NOT NULL,
   license_key varchar(24) NOT NULL,
