@@ -172,7 +172,7 @@ CREATE TABLE IF NOT EXISTS licensz (
 - **Licensz Vásárlás**: Gyors és biztonságos vásárlás rendszer PayPal Api Használatával
 
 ### 🔒 **Admin Panel**  
-- **Felhasználókezelés**: Felhasználók listázása, törlése, érmék módosítása.    
+- **Felhasználókezelés**: Felhasználók listázása, törlése, érmék módosítása, Licensz Tiltása (Banolása).    
 
 ### 📊 **Scoreboard**  
 - **Élő eredménytábla**: Játékosok és érmék megjelenítése.  
