@@ -12,16 +12,7 @@ if (isset($_POST['logout'])) {
     exit();
 }
 
-$servername = "localhost";
-$db_username = "root";
-$db_password = "";
-$dbname = "db_mega";
-
-$conn = new mysqli($servername, $db_username, $db_password, $dbname);
-
-if ($conn->connect_error) {
-    die("Kapcsolat sikertelen: " . $conn->connect_error);
-}
+require_once 'db.php';
 
 $user_count_sql = "SELECT COUNT(*) AS total_users FROM users";
 $total_users = $conn->query($user_count_sql)->fetch_assoc()['total_users'];

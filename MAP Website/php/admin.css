@@ -6,7 +6,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 150vh;
     margin: 0;
     font-family: Arial, sans-serif;
     background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);

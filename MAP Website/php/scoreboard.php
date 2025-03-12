@@ -1,27 +1,12 @@
 <?php
 session_start();
+require_once 'db.php';
 
-// Ellenőrizzük, hogy be van-e jelentkezve a felhasználó
 if (!isset($_SESSION['username'])) {
     header("Location: login.php");
     exit();
 }
 
-// Adatbázis kapcsolat beállítása
-$servername = "localhost";
-$db_username = "root";
-$db_password = "";
-$dbname = "db_mega";
-
-// Kapcsolódás az adatbázishoz
-$conn = new mysqli($servername, $db_username, $db_password, $dbname);
-
-// Kapcsolat ellenőrzése
-if ($conn->connect_error) {
-    die("Kapcsolat sikertelen: " . $conn->connect_error);
-}
-
-// Kijelentkezés kezelése
 if (isset($_POST['logout'])) {
     session_unset();
     session_destroy();
@@ -29,7 +14,6 @@ if (isset($_POST['logout'])) {
     exit();
 }
 
-// Felhasználók lekérdezése coin szerint csökkenő sorrendben
 $sql = "SELECT username, coin FROM users ORDER BY coin DESC";
 $result = $conn->query($sql);
 ?>

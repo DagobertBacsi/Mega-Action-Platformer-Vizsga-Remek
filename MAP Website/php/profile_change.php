@@ -1,14 +1,6 @@
 <?php
 session_start();
-$servername = "localhost";
-$db_username = "root";
-$db_password = "";
-$dbname = "db_mega";
-$conn = new mysqli($servername, $db_username, $db_password, $dbname);
-
-if ($conn->connect_error) {
-    die("Kapcsolat sikertelen: " . $conn->connect_error);
-}
+require_once 'db.php';
 
 if (!isset($_SESSION['username'])) {
     header("Location: login.php");

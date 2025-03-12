@@ -1,21 +1,13 @@
 <?php
 session_start();
-$servername = "localhost";
-$db_username = "root";
-$db_password = "";
-$dbname = "db_mega";
-$conn = new mysqli($servername, $db_username, $db_password, $dbname);
+require_once 'db.php';
 
-if ($conn->connect_error) {
-    die("Kapcsolat sikertelen: " . $conn->connect_error);
-}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $username = $_POST['username'];
     $password = $_POST['password'];
     
-    // Meglévő felhasználó ellenőrzése
     $sql_check = "SELECT * FROM users WHERE username = '$username' OR email = '$email'";
     $result_check = $conn->query($sql_check);
 
