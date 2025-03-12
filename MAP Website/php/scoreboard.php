@@ -1,4 +1,12 @@
 <?php
+
+/**  
+ *  
+ * Ponttábla az adatokkal
+ *  
+ * @author  Kondor Milán, Kálmán Rómeó, Orsós Szabolcs
+ */  
+
 session_start();
 require_once 'db.php';
 
