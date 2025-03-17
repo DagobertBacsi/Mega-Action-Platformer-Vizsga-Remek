@@ -1,0 +1,129 @@
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Az oldal nem található</title>
+    <style>
+        @keyframes waveAnimation {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes colorWave {
+            0% { color: #ff4757; }
+            50% { color: #1e90ff; }
+            100% { color: #ff4757; }
+        }
+        
+        @keyframes twinkle {
+            0% { opacity: 0.3; }
+            50% { opacity: 1; }
+            100% { opacity: 0.3; }
+        }
+        
+        @keyframes textWave {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: black;
+            overflow: hidden;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            position: relative;
+        }
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+        }
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            opacity: 0.8;
+            border-radius: 50%;
+            transition: transform 0.5s ease-out;
+            /*animation: twinkle 3s infinite ease-in-out alternate;*/
+        }
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        h1 {
+            font-size: 100px;
+            margin: 0;
+            display: inline-block;
+            animation: waveAnimation 1.5s ease-in-out infinite, colorWave 3s linear infinite;
+        }
+        p {
+            font-size: 20px;
+            animation: textWave 1.5s ease-in-out infinite;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="container">
+        <h1>404</h1>
+        <p>Az oldal nem található.</p>
+        <a href="index.html">Vissza a főoldalra</a>
+    </div>
+    <script>
+        const starsContainer = document.querySelector(".stars");
+        const numStars = 100;
+        let stars = [];
+        
+        for (let i = 0; i < numStars; i++) {
+            let star = document.createElement("div");
+            star.classList.add("star");
+            let x = Math.random() * window.innerWidth;
+            let y = Math.random() * window.innerHeight;
+            star.style.top = y + "px";
+            star.style.left = x + "px";
+            starsContainer.appendChild(star);
+            stars.push({ element: star, x, y });
+        }
+        
+        document.addEventListener("mousemove", (e) => {
+            stars.forEach(star => {
+                let dx = star.x - e.clientX;
+                let dy = star.y - e.clientY;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+                if (distance < 100) {
+                    let angle = Math.atan2(dy, dx);
+                    let moveX = Math.cos(angle) * 50;
+                    let moveY = Math.sin(angle) * 50;
+                    star.element.style.transform = `translate(${moveX}px, ${moveY}px)`;
+                } else {
+                    star.element.style.transform = "translate(0, 0)";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
