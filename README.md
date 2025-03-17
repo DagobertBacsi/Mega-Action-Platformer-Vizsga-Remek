@@ -99,6 +99,29 @@ MAP Website/
    - Nyisd meg a `GameLauncher.sln` fájlt.  
 3. **Launcher futtatása**:  
    - Indítsd el a programot és az autómatikusan letölti neked a játékot.
+  
+---
+
+### 🗄 **HTACCESS Működése**  
+1. **Apache konfigurációs fájl**:
+   - Nyisd meg az Apache konfigurációs fájlt (általában httpd.conf). 
+     Itt található: C:\xampp\apache\conf\httpd.conf
+   - Keress rá erre a sorra: #LoadModule rewrite_module modules/mod_rewrite.so (Ha a sor elején # van, akkor töröld ki, hogy engedélyezd a mod_rewrite modult.)
+   - Keress egy ehhez hasonló blokkot:
+       ```
+        <Directory "C:/xampp/htdocs">
+            AllowOverride None
+            Require all granted
+        </Directory>
+       ```
+   - Módosítsd így:
+        ```
+        <Directory "C:/xampp/htdocs">
+            AllowOverride All
+            Require all granted
+        </Directory>
+        ```
+---
 
 ### 🗄 **Adatbázis létrehozása**  
 
