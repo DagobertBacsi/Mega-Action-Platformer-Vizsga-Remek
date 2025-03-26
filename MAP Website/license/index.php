@@ -1,4 +1,17 @@
 <?php 
+
+/**
+ * Fizetési nyugta generálása DOCX formátumban egy adott rendelési azonosító alapján.
+ *
+ * @author Kondor Milán, Kálmán Rómeó, Orsós Szabolcs
+ */
+
+/**
+ * Ellenőrzi, hogy a `GET` kérésben szerepel-e a rendelési azonosító.
+ *
+ * @param string $_GET['order_id'] A rendelési azonosító az URL-ből.
+ */
+
 require_once 'config.php'; 
 ?>
 
@@ -7,42 +20,43 @@ require_once 'config.php';
 <title>MAP - Licensz</title>
 <div class="rgb-bg">
 <div class="terms-container">
-    <h3>💡 Általános Szerződési Feltételek (ÁSZF) 💡</h3>
+    <h3>⚡ Általános Szerződési Feltételek (ÁSZF) - Licensz Vásárlás ⚡</h3>
     <textarea readonly class="terms-text" style="resize: none;">
-        📝 Hatályos: 2024. március 2. 
 
-        Kérjük, figyelmesen olvassa el az alábbi szerződési feltételeket,  
-        mielőtt PayPal-on keresztül fizetést hajt végre.  
+✨ Hatályos: 2024. március 2.
 
-        A PayPal gombra kattintással és a tranzakció elindításával  
-        Ön elfogadja a jelen ÁSZF-et.  
+Kérjük, figyelmesen olvassa el az alábbi szerződési feltételeket, mielőtt PayPal-on keresztül licenszet vásárol a játékhoz.
 
-        -------------------------------------------------------  
+A PayPal gombra kattintással és a tranzakció elindításával Ön elfogadja a jelen ÁSZF-et.
 
-        1️⃣ Fizetési folyamat
-        A fizetés a PayPal biztonságos rendszerén keresztül történik.  
-        A Vásárló e-mailben kap visszaigazolást.  
+1️⃣ Licensz vásárlási folyamat
 
-        2️⃣ Termékek és árak
-        - A feltüntetett árak tartalmazzák az adókat (ha van).  
-        - Az árak véglegesek.  
+A fizetés a PayPal biztonságos rendszerén keresztül történik.
 
-        3️⃣ Szállítás és teljesítés
-        - 📥 Digitális termékek: azonnal elérhetővé válnak.  
-        - 📦 Fizikai termékek: a szállítás a megrendeléstől függ.  
+A sikeres tranzakció után a vásárló egy licensz kulcsot kap, valamint egy online nyugtát, amely DOCX formátumban letölthető.
 
-        4️⃣ Elállási jog
-        - ❌ Digitális termékek: nincs visszatérítés.  
-        - ✅ Fizikai termékek: 14 napon belül élhet az elállási jogával.  
+2️⃣ Licenszek és árak
 
-        5️⃣ Adatkezelés és biztonság  
-        A Vásárló adatait az Adatvédelmi Szabályzat szerint kezeljük.  
+A megvásárolható licenszek és azok árai a weboldalon kerülnek feltüntetésre.
 
-        -------------------------------------------------------  
+A feltüntetett árak tartalmazzák az adókat (ha van).
 
-        🔹 Ügyfélszolgálat
-        📧 E-mail: chetan@mapdevelopment.hu  
-        📞 Telefon: 06702587769  
+Az árak véglegesek, utólagos módosításra nincs lehetőség.
+
+3️⃣ Teljesítés és aktiválás
+
+📥 Digitális licenszek: A vásárlás után azonnal aktiválásra kerülnek, és a vásárló megkapja az aktiválási kulcsot.
+
+4️⃣ Elállási jog és visszatérítés
+
+❌ Digitális licenszek esetén nincs lehetőség elállásra vagy visszatérítésre. A vásárlás végleges.
+
+5️⃣ Adatkezelés és biztonság A vásárló adatait az Adatvédelmi Szabályzat szerint kezeljük, és harmadik fél számára nem adjuk ki.
+
+🔍 További információ vagy kérdés esetén forduljon ügyfélszolgálatunkhoz:✉ E-mail: support@mapdevelopment.hu📞 Telefon: 06702587769
+
+Köszönjük, hogy nálunk vásárolja meg licenszét! ✨  
+
     </textarea>
     
     <label class="checkbox-container">
@@ -58,7 +72,7 @@ require_once 'config.php';
     <!-- Fizetési felület (kezdetben rejtve) -->
     <div id="paymentSection" class="hidden">
         <div class="panel">
-            <div class="overlay hidden">
+            <div class="hidden overlay">
                 <div class="overlay-content">
                     <img src="loading.gif" alt="Feldolgozás..."/>
                 </div>

@@ -71,7 +71,7 @@ p {
 .overlay-content img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Kitölti a területet anélkül, hogy torzulna */
+    object-fit: cover;
 }
 
 
@@ -143,14 +143,20 @@ p {
 .terms-text {
     width: 100%;
     height: 350px;
-    padding: 10px;
-    background: #222;
+    padding: 15px;
+    background: #1a1a1a;
     color: #0f0;
-    border: 1px solid #0f0;
-    max-height: 350px;
+    border: 2px solid #0f0;
+    border-radius: 10px;
+    font-family: "Courier New", monospace;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify;
+    box-shadow: 0px 0px 10px rgba(0, 255, 0, 0.5);
+    overflow-y: auto;
+    word-wrap: break-word;
+    white-space: pre-wrap;
 }
-
-
 
 /* Gomb hover effekt */
 #acceptButton:hover {
